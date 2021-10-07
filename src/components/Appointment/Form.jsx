@@ -17,8 +17,6 @@ const Form = (props) => {
   };
 
   const save = () => {
-    // setName(name);
-    // setInterviewer(interviewer);
     props.onSave();
   };
 
@@ -38,8 +36,8 @@ const Form = (props) => {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button onClick={event => cancel()} danger>Cancel</Button>
-          <Button onClick={event => save()} confirm>Save</Button>
+          <Button onClick={cancel} danger>Cancel</Button>
+          <Button onClick={save} confirm>Save</Button>
         </section>
       </section>
     </main>
