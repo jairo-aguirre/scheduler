@@ -1,5 +1,5 @@
 # Interview Scheduler
-### This application allows students to **create**, **edit** and **delete** interview `appointments` with available interviewers.
+This application allows students to **create**, **edit** and **delete** interview `appointments` with available interviewers.
 
 ## Setup
 
@@ -24,6 +24,6 @@ npm run storybook
 ```
 
 ## Screenshots
-![app overview]()
+![app overview](https://github.com/vandergit/scheduler/blob/main/docs/app%20overview.png)
 ![setting appointment]()
 ![created appointment]()
