@@ -25,11 +25,15 @@ const Appointment = (props) => {
   );
 
   const save = (name, interviewer) => {
+    if (!interviewer || !name) return;
+
     const interview = {
       student: name,
       interviewer
     };
+
     transition(SAVING);
+
     props.bookInterview(props.id, interview)
       .then(() => {transition(SHOW)})
       .catch(() => {transition(ERROR_SAVE)});
