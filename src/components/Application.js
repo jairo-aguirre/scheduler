@@ -10,6 +10,7 @@ const appointments = [
   {
     id: 1,
     time: "12pm",
+    interview: null
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const appointments = [
 
 export default function Application(props) {
   const [state, setState] = useState({
-    day: "Monday",
+    day: "",
     days: [],
     appointments: { appointments },
     interviewers: {}
@@ -48,9 +49,42 @@ export default function Application(props) {
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const dailyInterviewers = getInterviewersForDay(state, state.day);
 
+  const bookInterview = (id, interview) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    
+    return axios.put(`/api/appointments/${id}`, {interview})
+      .then((response) => {
+        setState({...state, appointments});
+      });
+  }
+
+  const cancelInterview = (id) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    
+    return axios.delete(`/api/appointments/${id}`)
+      .then((response) => {
+        setState({...state, appointments});
+      });
+  }
+
   const schedule = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
-
     return (
       <Appointment
         key={appointment.id}
@@ -58,6 +92,8 @@ export default function Application(props) {
         time={appointment.time}
         interview={interview}
         interviewers={dailyInterviewers}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });
