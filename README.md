@@ -1,4 +1,5 @@
 # Interview Scheduler
+### This application allows students to **create**, **edit** and **delete** interview `appointments` with available interviewers.
 
 ## Setup
 
@@ -21,3 +22,8 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Screenshots
+![app overview]()
+![setting appointment]()
+![created appointment]()
