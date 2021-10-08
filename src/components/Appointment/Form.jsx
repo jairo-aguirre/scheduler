@@ -17,7 +17,7 @@ const Form = (props) => {
   };
 
   const save = () => {
-    props.onSave();
+    props.onSave(name, interviewer);
   };
 
   return (
