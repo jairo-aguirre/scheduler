@@ -25,5 +25,5 @@ npm run storybook
 
 ## Screenshots
 ![app overview](https://github.com/vandergit/scheduler/blob/main/docs/app%20overview.png)
-![setting appointment]()
-![created appointment]()
+![setting appointment](https://github.com/vandergit/scheduler/blob/main/docs/setting%20appointment.png)
+![created appointment](https://github.com/vandergit/scheduler/blob/main/docs/setting%20appointment.png)
